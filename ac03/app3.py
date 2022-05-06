@@ -40,7 +40,7 @@ def signUp():
             conn = mysql.connect()
             cursor = conn.cursor()
             _hashed_preco = _preco
-            cursor.execute('insert into tbl_user (_name, _username, _address) VALUES (%s, %s, %s)', ( _name,_categoria,_preco))
+            cursor.execute('insert into tbl_user (_name, _categoria, _preco) VALUES (%s, %s, %s)', ( _name,_categoria,_preco))
             conn.commit()
 
             return render_template('signup.html')
